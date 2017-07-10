@@ -1,0 +1,19 @@
+{
+  "name": "lambda-jp2k-converter",
+  "version": "1.0.0",
+  "description": "An AWS Lambda function for converting JPEG2000 Lossless Files to Standard JPEGs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaptiin-tuekhov/lambda-jp2k-converter.git"
+  },
+  "author": "Nikita Petukhov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaptiin-tuekhov/lambda-jp2k-converter/issues"
+  },
+  "homepage": "https://github.com/kaptiin-tuekhov/lambda-jp2k-converter#readme"
+}
