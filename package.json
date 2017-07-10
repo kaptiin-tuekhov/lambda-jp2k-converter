@@ -1,13 +1,14 @@
 {
-  "name": "lambda-jp2k-converter",
+  "name": "lambda-img-to-png",
   "version": "1.0.0",
-  "description": "An AWS Lambda function for converting JPEG2000 Lossless Files to Standard JPEGs",
+  "description": "An AWS Lambda function for converting image files to PNGs",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build && npm run watch"
+    "start": "npm run build && npm run watch",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,12 @@
   "dependencies": {
     "aws-sdk": "^2.82.0",
     "gm": "^1.23.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["ts", "js"],
+    "transform": {
+      "^.+\\.(ts)$": "<rootDir>/preprocessor.js"
+    },
+    "testMatch": ["**/tests/*.(ts|js)"]
   }
 }
