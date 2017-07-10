@@ -22,7 +22,9 @@
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
     "@types/gm": "^1.17.31",
+    "@types/jest": "^20.0.2",
     "@types/node": "^8.0.9",
+    "jest": "^20.0.4",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1"
   },
