@@ -23,7 +23,35 @@ exports.handler = (event: any, context: any, callback: Function) => {
       callback(message);
     } else {
       console.log("CONTENT TYPE:", data.ContentType);
-      convertPNG(data.Body, )
+      const fileNameRoot = key.split(".")[0];
+      convertPNG(
+        data.Body,
+        `${fileNameRoot}.png`,
+        (err: Error, buffer: Buffer) => {
+          if (err) {
+            console.log(err);
+            const message = `Error converting to PNG`;
+            console.log(message);
+            callback(message);
+          } else {
+            s3.putObject(
+              {
+                Bucket: "np-dicom-pngs",
+                Key: `${fileNameRoot}.png`,
+                Body: buffer
+              },
+              (err, data) => {
+                if (err) {
+                  console.log(err);
+                  const message = `Error uploading PNG to bucket`;
+                  console.log(message);
+                  callback(message);
+                }
+              }
+            );
+          }
+        }
+      );
     }
+  });
 };
-
